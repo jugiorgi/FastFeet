@@ -1,0 +1,27 @@
+### Será necessário criar um arquivo .env para colocar na raiz do projeto preenchendo as seguintes informações:
+
+APP_URL=http://localhost:3331
+NODE_ENV=development
+
+# Auth
+
+APP_SECRET=
+
+# Database
+
+DB_HOST=
+DB_USER=
+DB_PASS=
+DB_NAME=fastfeet
+
+# Redis
+
+REDIS_HOST=
+REDIS_PORT=
+
+# Mail
+
+MAIL_HOST=
+MAIL_PORT=
+MAIL_USER=
+MAIL_PASS=
