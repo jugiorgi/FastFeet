@@ -20,7 +20,7 @@ yarn sequelize db:seed:all
 yarn dev
 ```
 
-//button
+[![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=FastFeet&uri=https%3A%2F%2Fraw.githubusercontent.com%2Fjugiorgi%2FFastFeet%2Fmaster%2FFastFeet.yaml)
 
 ###### [http://localhost:3333](http://localhost:3333)
 
