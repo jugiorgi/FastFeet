@@ -1,13 +1,20 @@
 import React, { useState } from 'react';
-import { Image, Text } from 'react-native';
+import { useDispatch, useSelector } from 'react-redux';
+import { Image } from 'react-native';
 import PropTypes from 'prop-types';
+import { signInRequest } from '~/store/modules/auth/actions';
 import { Container, Background, Form, FormInput, SubmitButton } from './styles';
 import logo from '~/assets/fastfeet-logo.svg';
 
 export default function SignIn() {
+	const dispatch = useDispatch();
 	const [id, setId] = useState('');
 
-	function handleSubmit() {}
+	const loading = useSelector((state) => state.auth.loading);
+
+	function handleSubmit() {
+		dispatch(signInRequest(id));
+	}
 
 	return (
 		<Background>
@@ -26,8 +33,8 @@ export default function SignIn() {
 						onChangeText={setId}
 					/>
 
-					<SubmitButton onPress={handleSubmit}>
-						<Text>Acessar</Text>
+					<SubmitButton loading={loading} onPress={handleSubmit}>
+						Acessar
 					</SubmitButton>
 				</Form>
 			</Container>

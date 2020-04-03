@@ -6,35 +6,16 @@ import { signInSuccess, signFailure } from './actions';
 
 export function* signIn({ payload }) {
 	try {
-		const { email, password } = payload;
+		const { id } = payload;
 
-		const response = yield call(api.post, 'sessions', {
-			email,
-			password,
-		});
+		const response = yield call(api.get, `deliveryman/${id}`);
 
-		const { token, user } = response.data;
+		const { name } = response.data;
 
-		api.defaults.headers.Authorization = `Bearer ${token}`;
-
-		yield put(signInSuccess(token, user));
-
-		// history.push('/orders');
+		yield put(signInSuccess(id, name));
 	} catch (error) {
 		Alert('Falha na autenticação', 'verifique seus dados');
 		yield put(signFailure());
-	}
-}
-
-export function setToken({ payload }) {
-	if (!payload) {
-		return;
-	}
-
-	const { token } = payload.auth;
-
-	if (token) {
-		api.defaults.headers.Authorization = `Bearer ${token}`;
 	}
 }
 
@@ -43,7 +24,6 @@ export function signOut() {
 }
 
 export default all([
-	takeLatest('persist/REHYDRATE', setToken),
 	takeLatest('@auth/SIGN_IN_REQUEST', signIn),
 	takeLatest('@auth/SIGN_OUT', signOut),
 ]);
