@@ -6,6 +6,25 @@ import File from '../models/File';
 import DeliveryProblem from '../models/DeliveryProblem';
 
 class DeliverymanController {
+    async show(req, res) {
+        const { id } = req.params;
+
+        const deliveryman = await Deliveryman.findByPk(id, {
+            attributes: ['id', 'name', 'avatar_id'],
+            include: {
+                model: File,
+                as: 'avatar',
+                attributes: ['name', 'path', 'url'],
+            },
+        });
+
+        if (!deliveryman) {
+            return res.status(404).json({ error: 'Deliveryman not found' });
+        }
+
+        return res.json(deliveryman);
+    }
+
     async index(req, res) {
         const { q, page = 1 } = req.query;
 
