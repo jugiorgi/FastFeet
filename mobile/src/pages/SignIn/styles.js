@@ -16,12 +16,26 @@ export const Container = styled.KeyboardAvoidingView.attrs({
 	justify-content: center;
 	align-items: center;
 	padding: 0 30px;
+	height: 100%;
+	width: 100%;
 `;
 
-export const Form = styled.TextInput``;
+export const Image = styled.Image`
+	margin-bottom: 40px;
+	height: 70px;
+	width: 100%;
+`;
 
-export const FormInput = styled.View``;
+export const FormInput = styled.TextInput`
+	height: 46px;
+	width: 100%;
+	padding: 10px;
+	border-radius: 4px;
+	color: #999999;
+	background: #fff;
+`;
 
 export const SubmitButton = styled(Button)`
-	margin-top: 5px;
+	margin-top: 20px;
+	width: 100%;
 `;

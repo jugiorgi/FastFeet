@@ -3,6 +3,7 @@ import { createBottomTabNavigator } from 'react-navigation-tabs';
 
 import SignIn from './pages/SignIn';
 import Dashboard from './pages/Dashboard';
+import Profile from './pages/Profile';
 
 export default (signedIn = false) =>
 	createAppContainer(
@@ -14,15 +15,17 @@ export default (signedIn = false) =>
 				App: createBottomTabNavigator(
 					{
 						Dashboard,
+						Profile,
 					},
 					{
 						resetOnBlur: true,
 						tabBarOptions: {
 							keyboardHidesTabBar: true,
-							activeTintColor: '#FFF',
-							inactiveTintColor: 'rgba(255,255,255,0.6)',
+							activeTintColor: '#7d40e7',
+							inactiveTintColor: '#999999',
 							style: {
-								backgroundColor: '#7d40e7',
+								borderTopColor: '#999999',
+								backgroundColor: '#FFF',
 							},
 						},
 					}

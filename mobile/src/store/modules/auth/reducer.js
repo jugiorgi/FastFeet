@@ -14,7 +14,8 @@ export default function auth(state = INITIAL_STATE, action) {
 			}
 			case '@auth/SIGN_IN_SUCCESS': {
 				draft.id = action.payload.id;
-				draft.id = action.payload.name;
+				draft.name = action.payload.name;
+				draft.avatar = action.payload.avatar;
 				draft.signed = true;
 				draft.loading = false;
 				break;

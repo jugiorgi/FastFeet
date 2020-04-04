@@ -11,8 +11,9 @@ export function* signIn({ payload }) {
 		const response = yield call(api.get, `deliveryman/${id}`);
 
 		const { name } = response.data;
+		const avatar = response.data.avatar.url;
 
-		yield put(signInSuccess(id, name));
+		yield put(signInSuccess(id, name, avatar));
 	} catch (error) {
 		Alert('Falha na autenticação', 'verifique seus dados');
 		yield put(signFailure());
