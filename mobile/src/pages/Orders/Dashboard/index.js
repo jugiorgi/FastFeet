@@ -101,9 +101,3 @@ export default function Dashboard() {
 		</Container>
 	);
 }
-
-Dashboard.navigationOptions = {
-	tabBarIcon: ({ tintColor }) => (
-		<Icon name="reorder" size={20} color={tintColor} />
-	),
-};

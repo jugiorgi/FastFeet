@@ -67,7 +67,7 @@ export const Pending = styled.Text`
 export const HandedOut = styled.Text`
 	font-size: 16px;
 	font-weight: bold;
-	text-decoration-line: ${(props) => (props.pending ? 'underline' : 'none')};
+	text-decoration-line: ${(props) => (props.handedOut ? 'underline' : 'none')};
 	text-decoration-style: solid;
 	text-decoration-color: #7d40e7;
 	color: ${(props) => (props.handedOut ? '#7D40E7' : '#999999')};

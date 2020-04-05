@@ -86,6 +86,8 @@ export const InformationDetail = styled.Text`
 	font-weight: bold;
 `;
 
+export const DetailsButton = styled.TouchableOpacity``;
+
 export const More = styled.Text`
 	font-weight: bold;
 	font-size: 14px;

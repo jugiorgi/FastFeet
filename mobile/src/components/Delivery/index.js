@@ -1,7 +1,7 @@
-import React, { useMemo, useState, useEffect } from 'react';
-import { parseISO, format } from 'date-fns';
-import pt from 'date-fns/locale/pt';
+import React, { useState, useEffect } from 'react';
+import { withNavigation } from 'react-navigation';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import dateFormat from '~/utils/dateFormat';
 import {
 	Container,
 	Status,
@@ -16,10 +16,11 @@ import {
 	Space,
 	InformationTitle,
 	InformationDetail,
+	DetailsButton,
 	More,
 } from './styles';
 
-export default function Delivery({ data }) {
+function Delivery({ data, navigation }) {
 	const [state, setState] = useState('');
 
 	useEffect(() => {
@@ -31,11 +32,6 @@ export default function Delivery({ data }) {
 			setState('entregue');
 		}
 	}, [state, data.start_date, data.end_date]);
-
-	const dateFormatted = useMemo(
-		() => format(parseISO(data.createdAt), "dd'/'MM'/'yyyy", { locale: pt }),
-		[data.createdAt]
-	);
 
 	return (
 		<Container>
@@ -64,14 +60,17 @@ export default function Delivery({ data }) {
 			<Information>
 				<Space>
 					<InformationTitle>Data</InformationTitle>
-					<InformationDetail>{dateFormatted}</InformationDetail>
+					<InformationDetail>{dateFormat(data.createdAt)}</InformationDetail>
 				</Space>
 				<Space>
 					<InformationTitle>Cidade</InformationTitle>
 					<InformationDetail>{data.recipient.city}</InformationDetail>
 				</Space>
-				<More>Ver detalhes</More>
+				<DetailsButton onPress={() => navigation.navigate('Details', { data })}>
+					<More>Ver detalhes</More>
+				</DetailsButton>
 			</Information>
 		</Container>
 	);
 }
+export default withNavigation(Delivery);
