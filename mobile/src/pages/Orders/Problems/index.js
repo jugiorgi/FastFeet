@@ -1,13 +1,41 @@
-import React from 'react';
-import { TouchableOpacity } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { TouchableOpacity, Alert } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import api from '~/services/api';
 import Background from '~/components/Background';
-import { Container } from './styles';
+import Problem from '~/components/Problem';
+import { Container, DeliveryTitle, List } from './styles';
 
-export default function Problems() {
+export default function Problems({ navigation }) {
+	const [problems, setProblems] = useState([{ item: 'oi' }]);
+	const order_id = navigation.getParam('id');
+
+	useEffect(() => {
+		async function loadProblems() {
+			try {
+				const response = await api.get(`delivery/${order_id}/problems`);
+
+				setProblems(response.data);
+			} catch (error) {
+				Alert('Não foi possível carregar os problemas', 'Tente novamente');
+			}
+		}
+
+		loadProblems();
+	}, [order_id]);
+
 	return (
 		<>
 			<Background />
+			<Container>
+				<DeliveryTitle>Encomenda {order_id}</DeliveryTitle>
+
+				<List
+					data={problems}
+					keyExtractor={(item) => String(item.id)}
+					renderItem={({ item }) => <Problem onCancel={() => {}} data={item} />}
+				/>
+			</Container>
 		</>
 	);
 }

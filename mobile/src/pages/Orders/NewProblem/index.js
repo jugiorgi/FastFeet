@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { TouchableOpacity } from 'react-native';
+import { TouchableOpacity, Alert } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import api from '~/services/api';
 import Background from '~/components/Background';
 import { Container, FormInput, SubmitButton } from './styles';
 
@@ -8,15 +9,24 @@ export default function NewProblem({ navigation }) {
 	const [problem, setProblem] = useState('');
 	const order_id = navigation.getParam('id');
 
-	function handleSubmit() {}
+	async function handleSubmit() {
+		try {
+			await api.post(`delivery/${order_id}/problems`, {
+				description: problem,
+			});
+
+			navigation.navigate('Details');
+		} catch (error) {
+			Alert('Não foi possível cadastrar o problema, tente novamente');
+		}
+	}
 	return (
 		<>
 			<Background />
 			<Container>
 				<FormInput
+					multiline
 					keyboardType="text"
-					autoCorrect={false}
-					autoCapitalize="none"
 					placeholder="Inclua aqui o problema que ocorreu na entrega."
 					returnKeyType="send"
 					onSubmitEditing={handleSubmit}
@@ -24,8 +34,8 @@ export default function NewProblem({ navigation }) {
 					onChangeText={setProblem}
 				/>
 
-				<SubmitButton color="#82BF18" onPress={handleSubmit}>
-					Entrar no sistema
+				<SubmitButton color="#7D40E7" onPress={handleSubmit}>
+					Enviar
 				</SubmitButton>
 			</Container>
 		</>

@@ -2,12 +2,16 @@ import styled from 'styled-components/native';
 
 export const DeliveryDetails = styled.SafeAreaView`
 	margin: 10px auto;
+	background: #fff;
+	width: 100%;
+	height: 100%;
 `;
 
 export const DeliveryInformation = styled.View`
+	margin: 10px auto;
 	padding: 10px;
 	margin-top: -80px;
-	height: 40%;
+	height: 30%;
 	max-width: 90%;
 	min-width: 90%;
 	border-radius: 5px;
@@ -16,9 +20,10 @@ export const DeliveryInformation = styled.View`
 `;
 
 export const DeliverySituation = styled.View`
+	margin: 10px auto;
 	padding: 10px;
 	margin-top: 20px;
-	height: 30%;
+	height: 25%;
 	max-width: 90%;
 	min-width: 90%;
 	background: #fff;
@@ -60,8 +65,9 @@ export const Dates = styled.View`
 export const Space = styled.View``;
 
 export const DeliveryActions = styled.View`
+	margin: 10px auto;
 	margin-top: 20px;
-	height: 20%;
+	height: 15%;
 	max-width: 90%;
 	min-width: 90%;
 	background: #f8f9fd;

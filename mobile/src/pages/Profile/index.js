@@ -51,7 +51,9 @@ export default function Profile() {
 				<Description>{deliveryman.email}</Description>
 
 				<Title>Data de cadastro</Title>
-				<Description>{dateFormat(deliveryman.created_at)}</Description>
+				<Description>
+					{deliveryman.created_at ? dateFormat(deliveryman.created_at) : '--/--/--'}
+				</Description>
 			</Deliveryman>
 			<SubmitButton color="#E74040" onPress={handleLogout}>
 				Logout

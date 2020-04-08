@@ -2,10 +2,11 @@
 
 buildscript {
     ext {
-        buildToolsVersion = "28.0.3"
+        buildToolsVersion = "28.0.2"
         minSdkVersion = 16
         compileSdkVersion = 28
-        targetSdkVersion = 28
+        targetSdkVersion = 27
+        supportLibVersion = "28.0.2"
     }
     repositories {
         google()
@@ -35,4 +36,15 @@ allprojects {
         jcenter()
         maven { url 'https://www.jitpack.io' }
     }
+}
+
+subprojects {
+  project.configurations.all {
+    resolutionStrategy.eachDependency { details ->
+      if (details.requested.group == 'com.android.support'
+          && !details.requested.name.contains('multidex') ) {
+        details.useVersion "27.0.1"
+      }
+    }
+  }
 }

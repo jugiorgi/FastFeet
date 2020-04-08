@@ -91,11 +91,11 @@ export default function Details({ navigation }) {
 						<Icon name="highlight-off" size={30} color="#E74040" />
 						<Description>{`Informar \nProblemas`}</Description>
 					</Action>
-					<Action onPress={() => navigation.navigate('Problems')}>
+					<Action onPress={() => navigation.navigate('Problems', { id: order.id })}>
 						<Icon name="info-outline" size={30} color="#E7BA40" />
 						<Description>{`Visualizar \nProblemas`} </Description>
 					</Action>
-					<Action onPress={() => navigation.navigate('Confirm')}>
+					<Action onPress={() => navigation.navigate('Confirm', { id: order.id })}>
 						<Icon name="alarm-on" size={30} color="#7D40E7" />
 						<Description>{`Confirmar \nEntrega`} </Description>
 					</Action>
