@@ -30,6 +30,10 @@ routes.post('/delivery/:id/problems', DeliveryProblemsController.store);
 routes.get('/delivery/problems', DeliveryProblemsController.index);
 routes.get('/delivery/:id/problems', DeliveryProblemByIdController.index);
 
+routes.post('/files', upload.single('file'), FileController.store);
+
+routes.put('/order/:id', OrderController.update);
+
 routes.use(authMiddleware);
 
 routes.put('/users', UserController.update);
@@ -46,14 +50,12 @@ routes.delete('/deliveryman/:id', DeliverymanController.delete);
 
 routes.get('/order', OrderController.index);
 routes.post('/order', OrderController.store);
-routes.put('/order/:id', OrderController.update);
+
 routes.delete('/order/:id', OrderController.delete);
 
 routes.put('/order/start/:id', StartOrderController.update);
 routes.put('/order/end/:id', EndOrderController.update);
 
 routes.delete('/problem/:id/cancel-delivery', CancelDeliveryController.delete);
-
-routes.post('/files', upload.single('file'), FileController.store);
 
 export default routes;

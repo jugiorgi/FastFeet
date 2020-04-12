@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Text } from 'react-native';
+import { Text, Alert } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { signOut } from '~/store/modules/auth/actions';
@@ -30,13 +30,21 @@ export default function Dashboard() {
 
 	useEffect(() => {
 		async function loadOrdersPeding() {
-			const response = await api.get(`deliveryman/${id}/orders`);
-			setPending(response.data);
+			try {
+				const response = await api.get(`deliveryman/${id}/orders`);
+				setPending(response.data);
+			} catch (error) {
+				Alert.alert('Não foi possível carregar os dados', 'Tente novamente');
+			}
 		}
 
 		async function loadOrdersHandledOut() {
-			const response = await api.get(`deliveryman/${id}/deliveries`);
-			setHandledOut(response.data);
+			try {
+				const response = await api.get(`deliveryman/${id}/deliveries`);
+				setHandledOut(response.data);
+			} catch (error) {
+				Alert.alert('Não foi possível carregar os dados', 'Tente novamente');
+			}
 		}
 
 		if (isPending) {

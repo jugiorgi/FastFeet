@@ -25,8 +25,7 @@ class DeliverymanOrdersController {
                 },
             ],
         });
-        console.log(order);
-        console.log('=============');
+
         return res.json(order);
     }
 }

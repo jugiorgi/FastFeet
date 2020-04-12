@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Alert } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import dateFormat from '~/utils/dateFormat';
@@ -21,9 +22,13 @@ export default function Profile() {
 
 	useEffect(() => {
 		async function loadDeliveryman() {
-			const response = await api.get(`deliveryman/${id}`);
+			try {
+				const response = await api.get(`deliveryman/${id}`);
 
-			setDeliveryman(response.data);
+				setDeliveryman(response.data);
+			} catch (error) {
+				Alert.alert('Não foi possível carregar os dados', 'Tente novamente');
+			}
 		}
 
 		loadDeliveryman();

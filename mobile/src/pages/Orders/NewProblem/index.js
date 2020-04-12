@@ -17,7 +17,7 @@ export default function NewProblem({ navigation }) {
 
 			navigation.navigate('Details');
 		} catch (error) {
-			Alert('Não foi possível cadastrar o problema, tente novamente');
+			Alert.alert('Não foi possível cadastrar o problema', 'Tente novamente');
 		}
 	}
 	return (

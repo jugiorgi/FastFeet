@@ -17,7 +17,7 @@ export default function Problems({ navigation }) {
 
 				setProblems(response.data);
 			} catch (error) {
-				Alert('Não foi possível carregar os problemas', 'Tente novamente');
+				Alert.alert('Não foi possível carregar os problemas', 'Tente novamente');
 			}
 		}
 
