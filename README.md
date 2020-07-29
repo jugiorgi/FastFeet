@@ -1,6 +1,6 @@
 <br />
 <p align="center">
-    <img src="https://raw.githubusercontent.com/jugiorgi/FastFeet/master/frontend/src/assets/fastfeet-logo.png" alt="Logo" width="200" >
+    <img src="https://raw.githubusercontent.com/jugiorgi/FastFeet/master/frontend/src/assets/fastfeet-logo.png" alt="Logo" width="300" >
 </p>
 
 ## Sobre
@@ -9,7 +9,7 @@ O fastfeet é uma ferramenta para gerenciar entregas. Com ele é possível que o
 
 Post no LinkedIn: https://www.linkedin.com/posts/julia-giorgi-martin-146b15156_rocketseat-gostack-fastfeet-activity-6655960565380329472-97ms
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="Logo" width="30" >
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="Logo" width="50" >
 
 
 ## Aplicação
