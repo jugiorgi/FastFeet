@@ -9,7 +9,10 @@ O fastfeet é uma ferramenta para gerenciar entregas. Com ele é possível que o
 
 Post no LinkedIn: https://www.linkedin.com/posts/julia-giorgi-martin-146b15156_rocketseat-gostack-fastfeet-activity-6655960565380329472-97ms
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="Logo" width="50" >
+<p align="start">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React" width="50" >
+    <img src="https://walde.co/wp-content/uploads/2016/09/nodejs_logo.png" alt="Node" width="34" >
+</p>
 
 
 ## Aplicação
