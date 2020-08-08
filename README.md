@@ -15,15 +15,6 @@ Post no LinkedIn: https://www.linkedin.com/posts/julia-giorgi-martin-146b15156_r
 </p>
 
 
-## Aplicação
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/jugiorgi/FastFeet/master/frontend/src/assets/preview/login.png" width="800" alt="login">
-  <img src="https://raw.githubusercontent.com/jugiorgi/FastFeet/master/frontend/src/assets/preview/orders.png" width="800" alt="orders">
-  <img src="https://raw.githubusercontent.com/jugiorgi/FastFeet/master/frontend/src/assets/preview/orders_detail.png" width="800" alt="orders_detail">
-</p>
-
-
 ## Backend
 
 
@@ -78,3 +69,12 @@ yarn install
 ```sh
 react-native run-android
 ```
+
+
+## Aplicação
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/jugiorgi/FastFeet/master/frontend/src/assets/preview/login.png" width="800" alt="login">
+  <img src="https://raw.githubusercontent.com/jugiorgi/FastFeet/master/frontend/src/assets/preview/orders.png" width="800" alt="orders">
+  <img src="https://raw.githubusercontent.com/jugiorgi/FastFeet/master/frontend/src/assets/preview/orders_detail.png" width="800" alt="orders_detail">
+</p>
