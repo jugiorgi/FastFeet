@@ -7,7 +7,7 @@
 
 O fastfeet é uma ferramenta para gerenciar entregas. Com ele é possível que o administrador tenha total controle sobre as entregas e seus entregadores, podendo assim delegar atividades para todos eles e ter a comprovação de que o produto chegou ao local de destino. 
 
-Post no LinkedIn: https://www.linkedin.com/posts/julia-giorgi-martin-146b15156_rocketseat-gostack-fastfeet-activity-6655960565380329472-97ms
+Post no LinkedIn: https://www.linkedin.com/posts/juliagiorgi_rocketseat-gostack-fastfeet-activity-6655960565380329472-VjjW
 
 <p align="start">
     <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React" width="50" >
